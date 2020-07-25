@@ -17,8 +17,13 @@ import { Button,
   Breadcrumb,
   BreadcrumbItem,
   Tag,
-  Dialog
+  Dialog,
+  Calendar,
+  Message
 } from 'element-ui'
+
+
+Vue.prototype.$message = Message
 
 Vue.use(Button)
 Vue.use(Header)
@@ -39,3 +44,5 @@ Vue.use(Breadcrumb)
 Vue.use(BreadcrumbItem)
 Vue.use(Tag)
 Vue.use(Dialog)
+Vue.use(Calendar)
+

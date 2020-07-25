@@ -2,8 +2,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 
-// date 
+// views
 import Date from '../views/date/Date.vue'
+import Calendar from '../views/calendar/Calender.vue'
 
 Vue.use(VueRouter)
 
@@ -19,6 +20,11 @@ Vue.use(VueRouter)
   {
     path: '/date/:time',
     component: Date
+  },
+  {
+    path: '/calender',
+    // component: () => import('../views/calendar/Calender.vue')
+    component: Calendar
   }
   
 ]

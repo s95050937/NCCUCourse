@@ -18,9 +18,8 @@
         v-loading="loading"
       >
         <el-table-column
-          type="index"
-          width="50"
-          header-align="center"  
+          type="selection"
+          width="55"
           align="center"
         >
         </el-table-column>
@@ -30,13 +29,25 @@
           header-align="center"  
           align="center"
         >
+          <template slot-scope="scope">
+            <div @click="copyContent(scope.row.course)">
+              {{scope.row.course}}
+              <el-button  type="text" size="medium"
+                v-clipboard:copy="scope.row.course"     
+                v-clipboard:success="CopyIdSuccess"
+                v-clipboard:error="CopyIdWrong"
+              >
+                <i class="el-icon-copy-document"></i>
+              </el-button>
+            </div>
+          </template>
         </el-table-column>
         <el-table-column
           prop="name"
           label="科目名稱"
           header-align="center" 
         >
-        <template slot-scope="scope" class="course-name">
+        <template slot-scope="scope">
           <div class="course-name" @click="outlineShow(scope.row.course)">
             {{scope.row.name}}
           </div>
@@ -241,7 +252,16 @@ export default {
       // console.log(courseId.slice(6, 8));
       // console.log(courseId.slice(8, 10));
       this.outlineDialogVisible = true
-    }
+    },
+    copyContent(row) {
+      console.log(row);
+    },
+    CopyIdSuccess() {
+      this.$message.success('複製成功')
+    },
+    CopyIdWrong() {
+      this.$message.error('複製成功')
+    },
   },
 }
 </script>

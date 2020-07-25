@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <h1>HI!</h1>
+    
   </div>
 </template>
 
@@ -72,11 +73,7 @@ export default {
     console.log(this.courseList);
     console.log(this.courseByDateList);
     
-    // for (let index = 0; index < array.length; index++) {
-    axios.get('https://es.nccu.edu.tw/course/zh-TW/:sem=1091%20:dp1=01%20:dp2=A2%20/').then(res => {
-      console.log(res);
-    })
-    // }
+    
     
   },
   

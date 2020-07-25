@@ -6,7 +6,7 @@
         <h2>政大選課平台</h2>
       </el-header>
       <el-container>
-        <el-aside width="64px">
+        <el-aside :width="asideWidth">
           <el-menu
             active-text-color="#feca57"
             background-color="#40514e"
@@ -14,8 +14,13 @@
             default-active="/home"
             :router="true"
             :unique-opened="true"
-            :collapse="true"
-            >
+            :collapse="isCollapse"
+            :collapse-transition="false"
+          >
+            <div class="toggle-box" @click="changeCollapse">
+              <i class="el-icon-s-unfold" v-if="isCollapse"></i>
+              <i class="el-icon-s-fold" v-else></i>
+            </div>
             <el-menu-item index="/home">
               <i class="el-icon-s-home"></i>
               <span>主頁</span>
@@ -56,6 +61,10 @@
                 </el-menu-item>
               </el-menu-item-group>
             </el-submenu>
+            <el-menu-item index="/calender">
+              <i class="el-icon-date"></i>
+              <span>109年行事曆</span>
+            </el-menu-item>
           </el-menu>
         </el-aside>
         <el-container>
@@ -73,8 +82,25 @@ export default {
   computed: {
     key() {
       return this.$route.path + Math.random();
+    },
+    asideWidth() {
+      if (!!this.isCollapse) {
+        return '64px'
+      } else {
+        return '200px'
+      }
+    },
+  },
+  data() {
+    return {
+      isCollapse: false
     }
   },
+  methods: {
+    changeCollapse() {
+      this.isCollapse = !this.isCollapse
+    }
+  }
 }
 </script>
 
@@ -102,7 +128,25 @@ export default {
 }
 .el-menu {
   border-right-width: 0px;
+  .toggle-box {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: #526662;
+    background-color: #206a5d;
+    height: 30px;
+    cursor: pointer;
+    &:hover {
+      background-color: rgb(51,65,62);
+    }
+    i {
+      margin: auto;
+      color: #fff;
+    }
+  }
+  
 }
+
 .date-group {
   span {
     margin-left: 8px;
