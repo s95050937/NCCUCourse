@@ -5,6 +5,9 @@ html, body {
   Arial,
   serif;
 } 
+#app {
+  min-width: 1100px;
+}
 * {
 
   box-sizing: border-box;
@@ -20,6 +23,8 @@ li {
 a {
   text-decoration: none;
 }
+
+
 
 .el-breadcrumb {
   margin-bottom: 20px;

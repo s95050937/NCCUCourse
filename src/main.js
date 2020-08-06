@@ -11,8 +11,9 @@ import './plugins/clipboard2'
 import './assets/css/index.css'
 import './assets/css/normalize.css'
 
-Vue.config.productionTip = false
-
+// utils 
+import './utils/index'
+Vue.config.productionTip = false;
 new Vue({
   router,
   store,

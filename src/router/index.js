@@ -5,6 +5,7 @@ import Home from '../views/Home.vue'
 // views
 import Date from '../views/date/Date.vue'
 import Calendar from '../views/calendar/Calender.vue'
+import Favorite from '../views/favorite/Favorite.vue'
 
 Vue.use(VueRouter)
 
@@ -25,6 +26,10 @@ Vue.use(VueRouter)
     path: '/calender',
     // component: () => import('../views/calendar/Calender.vue')
     component: Calendar
+  },
+  {
+    path: '/favorite',
+    component: Favorite
   }
   
 ]

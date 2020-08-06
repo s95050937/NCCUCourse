@@ -19,7 +19,10 @@ import { Button,
   Tag,
   Dialog,
   Calendar,
-  Message
+  Message,
+  Form,
+  FormItem,
+  Tooltip
 } from 'element-ui'
 
 
@@ -45,4 +48,7 @@ Vue.use(BreadcrumbItem)
 Vue.use(Tag)
 Vue.use(Dialog)
 Vue.use(Calendar)
+Vue.use(Form)
+Vue.use(FormItem)
+Vue.use(Tooltip)
 

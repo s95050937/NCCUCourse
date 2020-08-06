@@ -3,7 +3,7 @@
     <el-container>
       <el-header>
         <img src="../assets/img/logo.png" alt="">
-        <h2>政大選課平台</h2>
+        <h2 class="web-title">政大選課平台</h2>
       </el-header>
       <el-container>
         <el-aside :width="asideWidth">
@@ -61,6 +61,10 @@
                 </el-menu-item>
               </el-menu-item-group>
             </el-submenu>
+            <el-menu-item index="/favorite">
+              <i class="el-icon-star-on"></i>
+              <span>我的最愛</span>
+            </el-menu-item>
             <el-menu-item index="/calender">
               <i class="el-icon-date"></i>
               <span>109年行事曆</span>
@@ -105,6 +109,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.web-title {
+  color: #ebecf1
+}
 .main-layout {
   height: 100vh;
 }
